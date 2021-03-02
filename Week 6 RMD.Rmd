@@ -1,8 +1,8 @@
-
 ---
-title: "Week 6"
-author: "Ty Bruckner
-output: html_document
+title: 'Weekly Exercises #6'
+author: "Ty Bruckner"
+output: 
+  html_document:
     keep_md: TRUE
     toc: TRUE
     toc_float: TRUE
@@ -27,23 +27,30 @@ library(rvest)
 library(gardenR)
 ```
 
+**Github link** [Here](https://github.com/tybruckner/week6)
+
+<br />
+
+
+**1**
+My Shiny App [Here](https://ty-bruckner-112.shinyapps.io/week6/?_ga=2.10999476.141876944.1614700437-423663824.1614700437)
+<br />
 #2
 ```{r}
-X2020_harvest <- read_csv("~/112 Data/2020_harvest.csv", 
+X2020_harvest <- read_csv("2020_harvest.csv", 
     col_types = cols(date = col_character(), 
         weight = col_number()), na = "MISSING", 
     skip = 2)%>%
   select(-X1) 
-View(X2020_harvest)
+X2020_harvest
 ```
 
 
 #3
 
 ```{r}
-library(readr)
 Groceries_dataset <- read_csv("Groceries_dataset.csv")
-view(Groceries_dataset)
+Groceries_dataset
 ```
 #5
 ```{r}
@@ -112,7 +119,7 @@ g4 <- garden_harvest %>%
   ggplot(aes(x=date, y= cum_weight_lbs, color = variety))+
   geom_line()+
   theme_minimal()+
-  labs(title = "2020 Beets Harvest in Pounds",x ="", y = "")
+  labs(title = "2020 Swiss Chard Harvest in Pounds",x ="", y = "")
 
  g1 | (g2/g3/g4) +
   plot_annotation(title = "Chenopiacae Vegetables", subtitle = "By Variety")

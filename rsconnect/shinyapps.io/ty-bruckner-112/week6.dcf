@@ -1,0 +1,13 @@
+name: week6
+title: week6
+username:
+account: ty-bruckner-112
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3722117
+bundleId: 4291064
+url: https://ty-bruckner-112.shinyapps.io/week6/
+when: 1614701184.88748
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: 2020_harvest.csv|Basic.R|Groceries_dataset.csv|README.md|Week-6-RMD.html|Week 6 RMD.Rmd
