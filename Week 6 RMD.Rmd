@@ -27,7 +27,7 @@ library(rvest)
 library(gardenR)
 ```
 
-
+#2
 ```{r}
 X2020_harvest <- read_csv("~/112 Data/2020_harvest.csv", 
     col_types = cols(date = col_character(), 
@@ -38,13 +38,14 @@ View(X2020_harvest)
 ```
 
 
-
+#3
 
 ```{r}
 library(readr)
 Groceries_dataset <- read_csv("Groceries_dataset.csv")
 view(Groceries_dataset)
 ```
+#5
 ```{r}
 garden_harvest %>% 
   group_by(vegetable) %>%
@@ -54,7 +55,7 @@ garden_harvest %>%
   tab_header(title = "Lisa's 2020 Harvest")
   
 ```
-
+#6
 ```{r}
 g2 <- garden_harvest %>%
   select(vegetable,date,weight,variety)%>%
@@ -116,4 +117,6 @@ g4 <- garden_harvest %>%
  g1 | (g2/g3/g4) +
   plot_annotation(title = "Chenopiacae Vegetables", subtitle = "By Variety")
 ```
+
+GitHub link : [Here](https://github.com/tybruckner/week6)
 

@@ -8,7 +8,7 @@ covid19 <- read_csv("https://raw.githubusercontent.com/nytimes/covid-19-data/mas
 ui <- fluidPage(
   selectInput("state", 
               "States", 
-              choices = list("state" = state.abb),
+              choices = list("state" = state.name),
               multiple = TRUE),
   submitButton(text = "Submit"),
   plotOutput(outputId = "timeplot")
@@ -17,13 +17,13 @@ ui <- fluidPage(
 server <- function(input, output) {
   output$timeplot <- renderPlot({
     covid19 %>% 
-      mutate(state.abb = state)%>%
-      group_by(state.abb)%>%
-      filter(cases >= 20)%>%
+      filter(cases > 20)%>%
+      filter(state %in% input$state)%>%
       ggplot() +
-      geom_line(aes(x = ymd(date), y = cases)) +
-      scale_y_continuous() +
-      theme_minimal()
+      geom_line(aes(x = ymd(date), y = cases, color = state)) +
+      theme_minimal()+
+      scale_y_continuous(labels = scales::comma)+
+      labs(title = "COVID 19 Cases", x = "", y = "Cases",color = "State(s)" )
   })
 }
 
