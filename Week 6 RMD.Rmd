@@ -1,0 +1,21 @@
+
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+ library(readr)
+library(tidyverse)
+X2020_harvest <- read_csv("~/112 Data/2020_harvest.csv", 
+    col_types = cols(date = col_character(), 
+        weight = col_number()), na = "MISSING", 
+    skip = 2)%>%
+  select(-X1)
+View(X2020_harvest)
+```
