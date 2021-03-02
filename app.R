@@ -1,7 +1,7 @@
 
 library(shiny)
 library(tidyverse)
-library(babynames)
+library(rsconnect)
 library(lubridate)
 covid19 <- read_csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv")
 
