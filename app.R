@@ -22,7 +22,7 @@ server <- function(input, output) {
       ggplot() +
       geom_line(aes(x = ymd(date), y = cases, color = state)) +
       theme_minimal()+
-      scale_y_continuous(labels = scales::comma)+
+      scale_y_log10(labels = scales::comma)+
       labs(title = "COVID 19 Cases", x = "", y = "Cases",color = "State(s)" )
   })
 }
